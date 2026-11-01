@@ -143,7 +143,7 @@ addEventListener('pointermove',e=>{if(!go||e.pointerType==='touch')return;if(ldx
 addEventListener('pointerdown',e=>{if(!go)return;addDrop(e.clientX,e.clientY,64+rd()*20,0,0,2.8);for(let k=0;k<4;k++){const a=rd()*6.283,v=60+rd()*70;addDrop(e.clientX+Math.cos(a)*50,e.clientY+Math.sin(a)*50,16+rd()*14,Math.cos(a)*v,Math.sin(a)*v,1.6+rd())}});
 const size=()=>{R.setSize(innerWidth,innerHeight);RT.setSize(innerWidth*PXR,innerHeight*PXR);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix()};size();addEventListener('resize',size);
 let mx=0,my=0,s=0,intro=0,go=false,cur=-1,swapT,tgt=0,cs=0;
-addEventListener('wheel',e=>{if(!go||$('pn').classList.contains('on'))return;e.preventDefault();tgt=Math.min(H(),Math.max(0,tgt+(e.deltaMode==1?e.deltaY*16:e.deltaY)*.55))},{passive:false});
+addEventListener('wheel',e=>{if(!go||$('pn').classList.contains('on'))return;e.preventDefault();tgt=Math.min(H(),Math.max(0,tgt+(e.deltaMode==1?e.deltaY*16:e.deltaY)*.35))},{passive:false});
 addEventListener('scroll',()=>{if(Math.abs(scrollY-cs)>3){cs=tgt=scrollY}});
 addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
 const RM=matchMedia('(prefers-reduced-motion:reduce)').matches,ss=x=>x*x*(3-2*x),cl=(x,a,b)=>Math.min(b,Math.max(a,x));
@@ -160,7 +160,7 @@ function fx(){PL*=.93;pxl+=(qx-pxl)*.2;pyl+=(qy-pyl)*.2;
 }
 addEventListener('pointermove',e=>{qx=e.clientX;qy=e.clientY;pmv=1});
 addEventListener('pointerdown',e=>{lastTap=performance.now();if(!go||(e.target.closest&&e.target.closest('a,button,#pn,#ld')))return});
-function frame(now){requestAnimationFrame(frame);fx();const t=now*.001;if(TC&&tch){tgt=cs=scrollY}else if(Math.abs(tgt-cs)>.3){cs+=(tgt-cs)*(RM?.5:TC?.12:.06);scrollTo(0,cs)}const p=cl(cs/Math.max(1,H()),0,1);
+function frame(now){requestAnimationFrame(frame);fx();const t=now*.001;if(TC&&tch){tgt=cs=scrollY}else if(Math.abs(tgt-cs)>.3){cs+=(tgt-cs)*(RM?.5:TC?.09:.045);scrollTo(0,cs)}const p=cl(cs/Math.max(1,H()),0,1);
  const v=Math.abs(p-s);fxv=v;s+=(p-s)*.035;if(go)intro+=(1-intro)*.02;
  const f=s*9,n=Math.round(f),d=f-n,i0=Math.min(Math.floor(f),8),e=ss(f-i0),A=PR[i0],B=PR[i0+1],c=k=>mix(A[k],B[k],e),bg=c(0),tx=c(3),ac=c(4);
  col.setRGB(bg[0]/255,bg[1]/255,bg[2]/255);R.setClearColor(col);scn.fog.color.copy(col);
