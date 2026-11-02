@@ -239,7 +239,7 @@ html.hc,html.hc *,html.hc #gl{cursor:none!important}
 .sc .sh em{font:500 11px 'JetBrains Mono',monospace;font-style:normal;letter-spacing:.2em;color:var(--ac)}
 .sc h3{font:italic 300 clamp(17px,1.5vw,22px)/1.15 Fraunces,Georgia,serif;color:#fff;letter-spacing:-.01em}
 .sc ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
-.sc li{padding:5px 11px;border:1px solid rgba(var(--acr),.32);border-radius:999px;background:rgba(var(--acr),.08);font:500 clamp(11px,.85vw,12.5px)/1.2 Manrope,sans-serif;letter-spacing:.03em;color:var(--tx);white-space:nowrap;transition:background .25s,border-color .25s,color .25s}
+.sc li{padding:5px 11px;border:1px solid rgba(var(--acr),.32);border-radius:999px;background:rgba(var(--acr),.08);font:500 clamp(11px,.85vw,12.5px)/1.2 Manrope,sans-serif;letter-spacing:.03em;color:var(--tx);white-space:normal;transition:background .25s,border-color .25s,color .25s}
 .sc li:hover{background:rgba(var(--acr),.22);border-color:rgba(var(--acr),.8);color:#fff}
 @media(max-width:800px){#cd.l3 .sg{grid-template-columns:1fr;gap:10px;margin:14px 0 0}.sc{padding:14px 16px}.sc .sh{margin-bottom:9px}.sc h3{font-size:18px}.sc li{padding:5px 11px;font-size:11.5px}}
 @media(prefers-reduced-motion:reduce){.sc{transition:opacity .3s}}
@@ -287,3 +287,5 @@ html.hc,html.hc *,html.hc #gl{cursor:none!important}
 #cd.l3 .sc li{padding:2px 6px;font-size:9px}
 }
 @media(max-width:800px){#cd.l0[class]{overflow:visible;max-height:none}}
+
+.sc li{border-radius:14px;line-height:1.25}
